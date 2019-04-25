@@ -30,6 +30,10 @@ public class TestMinimalMDL {
     private String jobCode;
 
     // BUG_2.1.4: Case sensitive bug with Spring boot 2.1.4
+    // TestMDL is mapped on same table with name= "STATUS" in uppercase, this is minimal version of the mapping.
+    // Use 2.1.4 lowercase -> Column STATUS not found.
+    // Use 2.1.4 uppercase -> ok
+    // Use 2.1.3 everything ok.
     @Column(name = "status")
     private String status;
 }
